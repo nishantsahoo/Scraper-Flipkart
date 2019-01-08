@@ -1,5 +1,8 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-html = urlopen("http://www.pythonscraping.com/exercises/exercise1.html")
+
+queryTerm = ""
+queryTerm = input("Enter the query term: ")
+html = urlopen("https://www.flipkart.com/search?q=" + queryTerm)
 bsObj = BeautifulSoup(html.read());
-print(bsObj.h1)
+print(bsObj.title)
